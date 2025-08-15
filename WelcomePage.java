@@ -5,14 +5,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+// Sometimes,WebElement of name or location or locator will be change while we script will not work, so we go for Object Repository.
+
+
 public class WelcomePage {
 	
 	public WelcomePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(linkText="Log in")
-	private WebElement loginLink;
+	@FindBy(linkText="Log in") // Here, LinkText is a locator .
+	private WebElement loginLink; // Here, (for Understanding purpose only) >> int B; 
 	
 	public WebElement getLoginLink() {
 		return loginLink;
@@ -43,3 +46,4 @@ public class WelcomePage {
 	
 
 }
+
